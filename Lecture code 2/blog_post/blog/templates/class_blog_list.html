@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Blog Post List{% endblock %}
+
+{% block content %}
+    <ul>
+      {% for blog in blogs %}
+        <li>
+          <a href="{% url 'class_blog_detail' blog.pk %}">{{ blog.title }}</a>
+        </li>
+      {% empty %}
+        <li>No blogs available.</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{% url 'class_blog_create' %}">Add New Blog</a>
+{% endblock %}

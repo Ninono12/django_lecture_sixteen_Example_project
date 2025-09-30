@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+    Page Not Found
+{% endblock %}
+
+{% block content %}
+    <div class="text-center py-16">
+      <h1 class="text-6xl font-bold text-gray-800">404</h1>
+      <p class="mt-4 text-lg text-gray-600">Oops! The page you’re looking for doesn’t exist.</p>
+
+      <div class="mt-6">
+        <a href="{% url 'blog_list' %}" class="ml-3 inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+          Browse Blogs
+        </a>
+      </div>
+    </div>
+{% endblock %}

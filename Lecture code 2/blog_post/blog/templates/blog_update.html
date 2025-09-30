@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Blog Post update{% endblock %}
+
+{% block content %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+    </form>
+
+    {% if form.errors %}
+      <ul>
+        {% for field, errors in form.errors.items %}
+          <li>{{ field }}: {{ errors|join:", " }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+{% endblock %}

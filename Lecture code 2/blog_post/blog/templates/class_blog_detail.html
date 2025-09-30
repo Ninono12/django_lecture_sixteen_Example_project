@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Blog Post{% endblock %}
+
+{% block content %}
+    <head>
+        <title>{{ blog.title }}</title>
+    </head>
+    <body>
+        <h1>{{ blog.title }}</h1>
+        <p>{{ blog.text }}</p>
+        <p>{{ blog.is_active }}</p>
+        <p>{{ blog.website }}</p>
+        <p>{{ blog.get_category_display }}</p>
+    </body>
+
+    <a href="{% url 'class_blog_update' blog.pk %}">Edit</a>
+    <a href="{% url 'class_blog_delete' blog.pk %}">Delete</a>
+{% endblock %}

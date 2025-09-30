@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Create blog post{% endblock %}
+
+{% block content %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Create</button>
+    </form>
+
+    {% if form.errors %}
+      <ul>
+        {% for field, errors in form.errors.items %}
+          <li>{{ field }}: {{ errors|join:", " }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+{% endblock %}
