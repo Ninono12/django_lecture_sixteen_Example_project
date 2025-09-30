@@ -6,7 +6,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views import View
 
-from blog_post import settings
+from django.conf import settings
 from user.forms import PasswordResetRequestForm, SetNewPasswordForm
 from user.models import CustomUser
 from user.utils.tokens import custom_password_reset_token

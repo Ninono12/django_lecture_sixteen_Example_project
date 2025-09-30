@@ -14,3 +14,5 @@ class UpdateBlogPostModelForm(forms.ModelForm):
     class Meta:
         model = BlogPost
         fields = ['title', 'text', 'document', 'category']
+
+
